@@ -17,7 +17,7 @@ public class FpcontrollerCs : MonoBehaviour
 	public float jumpVel = 0.2f;
     [Header("Speed of which dies and returns to the start postion")]
 	public float deathSmoothness;
-    [Header("Speed of which player crouches")]
+    [Header("Speed of which player crouches 0.01=fast/0.3=smooth")]
 	public float coruchSmoothness;
 	private float forwardVel;
 	private Vector3 velocity;

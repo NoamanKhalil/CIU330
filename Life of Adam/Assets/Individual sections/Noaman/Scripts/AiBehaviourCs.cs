@@ -8,7 +8,6 @@ enum AiState
     Idle =0 , Chase =1 ,Patrol=2
 };
 
-[RequireComponent(typeof(MySteeringBehaviour))]
 public class AiBehaviourCs : MonoBehaviour
 {
     [Header("Paste in the A object name here for enemy to follow path")]
@@ -16,7 +15,6 @@ public class AiBehaviourCs : MonoBehaviour
     [Header("Paste in the B object name here for enemy to follow path")]
     public string nameB;
 	public NavMeshAgent agent;
-    public MySteeringBehaviour steer;
 	public LayerMask layer;
     private AiState currentState;
     public Transform[] pathToFollowA;
@@ -40,7 +38,6 @@ public class AiBehaviourCs : MonoBehaviour
     void Start ()
     {
         day = GameObject.FindObjectOfType<LevelManagerCs>();
-        steer = this.gameObject.AddComponent<MySteeringBehaviour>();
         agent.autoBraking = false;
         if (!string.IsNullOrEmpty(nameA))
         {
@@ -93,7 +90,7 @@ public class AiBehaviourCs : MonoBehaviour
             currentState = AiState.Chase;
         }
 
-        if (Vector3.Distance(this.transform.position, playerObj.transform.position) <= 1f)
+        if (Vector3.Distance(this.transform.position, playerObj.transform.position) <=attackDistance)
         {
 
             Debug.Log("You just died");

@@ -2116,7 +2116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028859620894918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7567432, y: -2.68, z: 0.3464026}
+  m_LocalPosition: {x: 6.31, y: -1.66, z: 0.3464026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4040564279176338}
@@ -3810,7 +3810,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0119998455, y: 1.5180002, z: 0.648}
+  m_ConnectedAnchor: {x: -0.012000084, y: 1.5180002, z: 0.648}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4016,7 +4016,7 @@ MonoBehaviour:
   walkVel: 5
   jumpVel: 4
   deathSmoothness: 0.1
-  coruchSmoothness: 0.01
+  coruchSmoothness: 0.3
   initialCrouch: {fileID: 4425258818480762}
   crouchVect: {fileID: 4423790008003730}
   crouchPosSize: {x: 0, y: 0.4, z: 0}
@@ -4123,17 +4123,17 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028859620894918}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fc3be7cdec4d1147bed4e56236d07b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pick:
   - {fileID: 0}
-  - {fileID: 0}
   push:
   - {fileID: 0}
   weak:
+  - {fileID: 0}
   - {fileID: 0}
   effectActive: 0
   cooldownability: 10

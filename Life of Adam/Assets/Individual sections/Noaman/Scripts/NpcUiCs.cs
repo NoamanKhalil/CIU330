@@ -7,16 +7,23 @@ public class NpcUiCs : MonoBehaviour
 {
     [SerializeField]
     private GameObject thingToEnable;
+    [Header("Add All pickable objects here")]
+    [SerializeField]
+    private GameObject[] PickUps;
     public GameObject NpcText;
     public NpcAnimationCs npc;
     private LevelManagerCs lv;
+    
 	// Use this for initialization
 	void Start () 
 	{
-        
         lv= Object.FindObjectOfType<LevelManagerCs>();
         NpcText.SetActive(false);
         thingToEnable.SetActive(false);
+        for (int i = 0; i < PickUps.Length; i++)
+        {
+            PickUps[i].SetActive(false);
+        }
     }
 	void OnTriggerEnter(Collider other)
 	{
@@ -26,8 +33,12 @@ public class NpcUiCs : MonoBehaviour
         thingToEnable.SetActive(true);
         NpcText.SetActive(true);
         // npc.SetInteractive();
-        this.gameObject.SetActive(false);
 
+        for (int i = 0; i < PickUps.Length; i++)
+        {
+            PickUps[i].SetActive(true);
+        }
+        this.gameObject.SetActive(false);
 
     }
 
