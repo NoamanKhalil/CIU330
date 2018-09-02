@@ -18,5 +18,10 @@ public class AudioEventCs : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         myAudio.Play();
+        Invoke("disableMe", 2);
+    }
+    private void disableMe()
+    {
+        this.gameObject.SetActive(false);
     }
 }
