@@ -8,7 +8,7 @@ public class PickUpCs : MonoBehaviour
     [Header("Add player object here")]
     [SerializeField]
     private FpcontrollerCs fp;
-    [Header("Add the place points here")]
+    [Header("Add the place slot here")]
     [SerializeField]
     private GameObject redPlacePos;
     [SerializeField]

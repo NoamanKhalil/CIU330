@@ -13,7 +13,11 @@ public class ObjectDestroy : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        pianoAudio = GetComponent<AudioSource>();
+        if (!pianoAudio)
+        {
+            pianoAudio = GetComponent<AudioSource>();
+        }
+
 
     }
 

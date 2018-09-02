@@ -18,17 +18,23 @@ public class WayPoint : MonoBehaviour
     [Header("Set Point B point 0 here")]
     [SerializeField]
     GameObject pointBPos;
+
     void OnTriggerEnter(Collider other)
     {
-        if (isPointA)
+        Debug.Log("OntirggerEnterCalled");
+        if (other.gameObject.tag.Equals("Player"))
         {
-            myAi.transform.position = pointAPos.transform.position;
-            myAi.GetComponent<AiBehaviourCs>().setA();
+            if (isPointA)
+            {
+                myAi.transform.position = pointAPos.transform.position;
+                myAi.GetComponent<AiBehaviourCs>().setA();
+            }
+            if (isPointB)
+            {
+                myAi.transform.position = pointBPos.transform.position;
+                myAi.GetComponent<AiBehaviourCs>().setB();
+            }
         }
-        if (isPointB)
-        {
-            myAi.transform.position = pointBPos.transform.position;
-            myAi.GetComponent<AiBehaviourCs>().setB();
-        }
+
     }
 }
