@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 65170217480035676}
   - component: {fileID: 114548322888595792}
   - component: {fileID: 82907945080383898}
+  - component: {fileID: 114147710310231168}
   m_Layer: 0
   m_Name: Sphere Slot
   m_TagString: Untagged
@@ -106,8 +107,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1821201867441048}
-  m_LocalRotation: {x: -0.025771363, y: -0.706637, z: -0.706637, w: 0.025771363}
-  m_LocalPosition: {x: 11.027648, y: 1.5750004, z: -12.582225}
+  m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
+  m_LocalPosition: {x: 18.272, y: -0.02, z: 9.53}
   m_LocalScale: {x: 0.47273868, y: 0.47273868, z: 0.47273868}
   m_Children:
   - {fileID: 4737499807237262}
@@ -468,6 +469,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114147710310231168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869225475881130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd8e0af3c67f48eea6aed28321d512f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.12941177, g: 0.7764706, b: 1, a: 1}
+  endColor: {r: 0.13333334, g: 1, b: 0.26666668, a: 1}
 --- !u!114 &114548322888595792
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 65176239707424404}
   - component: {fileID: 114849068278841734}
   - component: {fileID: 82144640904893632}
+  - component: {fileID: 114283338751740592}
   m_Layer: 0
   m_Name: PYRAMID Slot
   m_TagString: Untagged
@@ -120,8 +121,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242926236475758}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -7.55, y: 2.33, z: 3.84}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 17.483, y: 3.914, z: 13.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4266599494950820}
@@ -484,6 +485,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114283338751740592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522134991487744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd8e0af3c67f48eea6aed28321d512f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.12941177, g: 0.7764706, b: 1, a: 1}
+  endColor: {r: 0.13333334, g: 1, b: 0.26666668, a: 1}
 --- !u!114 &114489047825658656
 MonoBehaviour:
   m_ObjectHideFlags: 1

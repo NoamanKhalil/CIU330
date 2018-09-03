@@ -37,8 +37,23 @@ public class PushObjectCs : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		
-	}
+        /*RaycastHit hit;
+        float distance = 3f;
+        Vector3 dirD = Vector3.down;
+        Vector3 pos = trabnsform.position;
+        //pos.x += 0.5f;
+
+        if (Physics.Raycast(pos, dirD, out hit, distance))
+        {
+
+            //Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
+            notPushing();
+        }
+        else 
+        {
+            rb.constraints = RigidbodyConstraints.None;
+        }*/
+    }
 
 	public void isPushing()
 	{

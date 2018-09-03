@@ -42,8 +42,7 @@ public class PickUpCs : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody>();
 		fp = GetComponent<FpcontrollerCs>();
-
-		isholding = false;
+        isholding = false;
 
 		if (GameObject.Find("LevelManager") != null)
 		{
@@ -77,7 +76,7 @@ public class PickUpCs : MonoBehaviour
 				//Debug.Log("Did Hit");
 				if (hit.collider.gameObject.tag == "Red" || hit.collider.gameObject.tag == "Blue"|| hit.collider.gameObject.tag == "Green" || hit.collider.gameObject.tag == "Pick")
 				{
-                    fp.onAnim(6);
+                    //fp.onAnim(6);
 
                     hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
 					pickedObj = hit.collider.gameObject;
@@ -105,7 +104,7 @@ public class PickUpCs : MonoBehaviour
 			//hit.collider.gameObject.GetComponent<Test>().setSlotActive();
 			if (pickedObj.tag == "Blue"&& Vector3.Distance (this.transform.position, bluePlacePos.transform.position)<Dist&& bluePlacePos!=null)
 			{
-                fp.onAnim(7);
+                //fp.onAnim(7);
 				Debug.Log("blue code called ");
                 Rigidbody tempRb= GetComponentInChildren<Rigidbody>();
 				//fp.setSpeed(4.0f);
@@ -124,7 +123,7 @@ public class PickUpCs : MonoBehaviour
             }
 			else if (pickedObj.tag == "Red" && Vector3.Distance (this.transform.position, redPlacePos.transform.position)<Dist&&redPlacePos!= null)
 			{
-                fp.onAnim(7);
+                //fp.onAnim(7);
                 Debug.Log("red code called ");
 				Rigidbody tempRb = GetComponentInChildren<Rigidbody>();
 				//fp.setSpeed(8.0f);
@@ -143,7 +142,7 @@ public class PickUpCs : MonoBehaviour
             }
             else if (pickedObj.tag == "Green" && Vector3.Distance(this.transform.position, greenPlacePos.transform.position) < Dist && greenPlacePos != null)
             {
-                fp.onAnim(7);
+                //fp.onAnim(7);
                 Debug.Log("Green code called ");
                 Rigidbody tempRb = GetComponentInChildren<Rigidbody>();
                 //fp.setSpeed(8.0f);

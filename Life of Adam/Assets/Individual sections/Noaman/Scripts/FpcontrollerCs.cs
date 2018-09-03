@@ -134,7 +134,9 @@ public class FpcontrollerCs : MonoBehaviour
         {
             onAnim(3);
         }
-        if (currentPos != lastPos && isHolding)
+
+        // hold animations cant be syned in time for showcase 
+        /* (currentPos != lastPos && isHolding)
         {
             // play walk holding anim
             onAnim(5);
@@ -143,7 +145,7 @@ public class FpcontrollerCs : MonoBehaviour
         {
             // play idle holding anim
             onAnim(8);
-        }
+        }*/
 
 
         if (Time.timeScale >= 1)

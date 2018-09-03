@@ -33,10 +33,12 @@ public class AiBehaviourCs : MonoBehaviour
 
 	private bool isPathA;
     private bool isPathB;
+
     private AiAnimator myAnimator;
     // Use this for initialization
     void Start ()
     {
+        myAnimator = GetComponent<AiAnimator>();
         day = GameObject.FindObjectOfType<LevelManagerCs>();
         agent.autoBraking = false;
         if (!string.IsNullOrEmpty(nameA))
@@ -142,7 +144,7 @@ public class AiBehaviourCs : MonoBehaviour
 	void chase()
 	{
 		agent.SetDestination(playerObj.transform.position);
-        //myAnimator.SetChase();
+        myAnimator.SetChase();
 	}
 
 
@@ -151,7 +153,7 @@ public class AiBehaviourCs : MonoBehaviour
 
         if (arr.Length == 0)
             return;
-        //myAnimator.SetPatrol();
+        myAnimator.SetPatrol();
         // Set the agent to go to the currently selected destination.
         agent.destination = arr[posPoint].position;
         // Choose the next point in the array as the destination,

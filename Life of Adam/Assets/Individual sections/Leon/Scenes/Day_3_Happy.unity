@@ -757,6 +757,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 4399013294601452, guid: 61b84dc4f11584115bd1aebedb78567a, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61b84dc4f11584115bd1aebedb78567a, type: 2}
   m_IsPrefabParent: 0
@@ -877,18 +881,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4352623773832286, guid: 78cfe11aa82eb7e429267e584bb48d92, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.2317706
-      objectReference: {fileID: 0}
-    - target: {fileID: 4352623773832286, guid: 78cfe11aa82eb7e429267e584bb48d92, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 4352623773832286, guid: 78cfe11aa82eb7e429267e584bb48d92, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90.00001
-      objectReference: {fileID: 0}
+    - target: {fileID: 114319812661671542, guid: 78cfe11aa82eb7e429267e584bb48d92,
+        type: 2}
+      propertyPath: shapeSlot
+      value: 
+      objectReference: {fileID: 779639808}
+    - target: {fileID: 114319812661671542, guid: 78cfe11aa82eb7e429267e584bb48d92,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1369042612}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78cfe11aa82eb7e429267e584bb48d92, type: 2}
   m_IsPrefabParent: 0
@@ -897,31 +899,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1864334356664400, guid: 78cfe11aa82eb7e429267e584bb48d92,
     type: 2}
   m_PrefabInternal: {fileID: 913922116}
---- !u!114 &913922118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 913922117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f04476cb13c9b648ab427ad2b1fc93f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shapeSlot: {fileID: 779639808}
-  sphereRadius: 3
-  layer:
-    serializedVersion: 2
-    m_Bits: 256
-  Dist: 3
-  otherObj: {fileID: 0}
-  myDistText: {fileID: 0}
-  thisName: GreenObjective
-  objective: 0
-  player: {fileID: 1369042612}
-  isBlue: 0
-  isRed: 0
-  isGreen: 1
 --- !u!225 &926794582 stripped
 CanvasGroup:
   m_PrefabParentObject: {fileID: 225878013966069980, guid: 6b923a99504e64c30a3f0a8bb679e27b,
