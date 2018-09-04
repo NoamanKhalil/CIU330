@@ -14,45 +14,24 @@ public class PushObjectCs : MonoBehaviour
     private bool posZ;
 	private Rigidbody rb;
 
-	// Use this for initialization
-	void Start () 
-	{
+    // Use this for initialization
+    void Start()
+    {
 
-		rb = GetComponent<Rigidbody>();
-		if ((rb.constraints & RigidbodyConstraints.FreezePositionX) == RigidbodyConstraints.FreezePositionX)
-		{
-			posX = true;
-		}
-		if ((rb.constraints & RigidbodyConstraints.FreezePositionY) == RigidbodyConstraints.FreezePositionY)
-		{
-			posY = true;
-		}
-		if ((rb.constraints & RigidbodyConstraints.FreezePositionZ) == RigidbodyConstraints.FreezePositionZ)
-		{
-			posZ = true;
-		}
-		rb.constraints = RigidbodyConstraints.FreezeAll;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-        /*RaycastHit hit;
-        float distance = 3f;
-        Vector3 dirD = Vector3.down;
-        Vector3 pos = trabnsform.position;
-        //pos.x += 0.5f;
-
-        if (Physics.Raycast(pos, dirD, out hit, distance))
+        rb = GetComponent<Rigidbody>();
+        if ((rb.constraints & RigidbodyConstraints.FreezePositionX) == RigidbodyConstraints.FreezePositionX)
         {
-
-            //Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
-            notPushing();
+            posX = true;
         }
-        else 
+        if ((rb.constraints & RigidbodyConstraints.FreezePositionY) == RigidbodyConstraints.FreezePositionY)
         {
-            rb.constraints = RigidbodyConstraints.None;
-        }*/
+            posY = true;
+        }
+        if ((rb.constraints & RigidbodyConstraints.FreezePositionZ) == RigidbodyConstraints.FreezePositionZ)
+        {
+            posZ = true;
+        }
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
 	public void isPushing()

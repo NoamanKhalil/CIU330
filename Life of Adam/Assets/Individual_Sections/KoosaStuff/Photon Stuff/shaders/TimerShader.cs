@@ -34,7 +34,8 @@ public class TimerShader : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		push = GameObject.FindGameObjectsWithTag(tagOfThePushable);
+        powerUI=GameObject.FindGameObjectWithTag("Ability").GetComponent<Image>();
+        push = GameObject.FindGameObjectsWithTag(tagOfThePushable);
 		pick = GameObject.FindGameObjectsWithTag(tagOfPickable);
 		weak = GameObject.FindGameObjectsWithTag(tagOfTheWeak);
 		powerUiAlpha = 1;

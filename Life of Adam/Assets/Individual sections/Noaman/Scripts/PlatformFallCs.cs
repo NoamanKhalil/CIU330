@@ -15,6 +15,10 @@ public class PlatformFallCs : MonoBehaviour
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody>();
+        if (!player)
+        {
+            player = GameObject.FindWithTag("Player");
+        }
 	}
 	
 	// Update is called once per frame
@@ -25,7 +29,7 @@ public class PlatformFallCs : MonoBehaviour
 		{
 	     rb.useGravity = true;
 		 rb.constraints = RigidbodyConstraints.None;
-			rb.mass = 100;
+			rb.mass = 10;
 		}
 	}
 }

@@ -12,6 +12,12 @@ TagManager:
   - Weak
   - Ground
   - Green
+  - NpcInteract
+  - NpcEvent
+  - Timer
+  - Stamina
+  - Ability
+  - PickIndicator
   layers:
   - Default
   - TransparentFX
@@ -25,7 +31,7 @@ TagManager:
   - Ground
   - AI
   - Camera
-  - 
+  - Interactable
   - 
   - 
   - 

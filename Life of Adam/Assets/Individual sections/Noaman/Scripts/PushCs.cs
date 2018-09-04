@@ -21,6 +21,10 @@ public class PushCs : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+        if (!textObj)
+        {
+            textObj = GameObject.FindGameObjectWithTag("PickIndicator");
+        }
 		fp = GetComponent<FpcontrollerCs>();
 		textObj.SetActive(false);
 	}

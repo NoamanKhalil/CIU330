@@ -13,12 +13,7 @@ public class PuzzleCs : MonoBehaviour
     [Header("Add the cube to of the corresponding name IE: the cube to point")]
     [SerializeField]
     private GameObject otherObj;
-    [SerializeField]
-    private Text myDistText;
-    [SerializeField]
-    private string thisName;
-    [SerializeField]
-    private bool objective;
+
     [SerializeField]
     private GameObject player;
 
@@ -30,7 +25,6 @@ public class PuzzleCs : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        objective = false;
 		shapeSlot.SetActive(false);
         aud = GetComponent<AudioSource>();
 	}

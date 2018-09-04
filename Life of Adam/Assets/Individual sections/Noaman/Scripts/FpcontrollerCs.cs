@@ -82,6 +82,7 @@ public class FpcontrollerCs : MonoBehaviour
         {
             myAnim = GetComponent<Animator>();
         }
+        staminaUi =GameObject.FindGameObjectWithTag("Stamina").GetComponent<Image>();
         level = GameObject.Find("LevelManager").GetComponent<LevelManagerCs>();
 		startPos = transform.position;
 		startRot = camera.transform.rotation;

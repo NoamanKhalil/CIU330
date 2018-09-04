@@ -22,7 +22,9 @@ public class AiBehaviourCs : MonoBehaviour
     public int posPoint;
     [Header("MoveSpeed")]
     public float speed;
-	public GameObject playerObj;
+    [Header("ChaseSpeed")]
+    public float chaseSpeed;
+    public GameObject playerObj;
     [Header("TurnSpeed")]
 	public float turnSpeed;
     [Header("MinDist before attacking player")]
@@ -30,7 +32,7 @@ public class AiBehaviourCs : MonoBehaviour
     [Header("dist before ttack player")]
 	public float attackDistance;
     public LevelManagerCs day;
-
+    
 	private bool isPathA;
     private bool isPathB;
 
@@ -144,16 +146,17 @@ public class AiBehaviourCs : MonoBehaviour
 	void chase()
 	{
 		agent.SetDestination(playerObj.transform.position);
-        myAnimator.SetChase();
+        agent.speed = chaseSpeed;
+        //myAnimator.SetChase();
 	}
 
 
 	void patrol(Transform [] arr)
 	{
-
+        agent.speed = speed;
         if (arr.Length == 0)
             return;
-        myAnimator.SetPatrol();
+        //myAnimator.SetPatrol();
         // Set the agent to go to the currently selected destination.
         agent.destination = arr[posPoint].position;
         // Choose the next point in the array as the destination,

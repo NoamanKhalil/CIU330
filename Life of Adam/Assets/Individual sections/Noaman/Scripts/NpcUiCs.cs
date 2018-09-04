@@ -5,20 +5,28 @@ using UnityEngine.UI;
 
 public class NpcUiCs : MonoBehaviour 
 {
+    [Header("Add HelpCanvas_Timer")]
     [SerializeField]
     private GameObject thingToEnable;
     [Header("Add All pickable objects here")]
     [SerializeField]
     private GameObject[] PickUps;
     public GameObject NpcText;
+    public GameObject NpcInterActionText;
     public NpcAnimationCs npc;
     private LevelManagerCs lv;
     
 	// Use this for initialization
 	void Start () 
 	{
+        if (!thingToEnable)
+        {
+            thingToEnable=GameObject.FindWithTag("NpcEvent");
+        }
+        //NpcInterActionText = GameObject.FindWithTag("NpcInteract");
         lv= Object.FindObjectOfType<LevelManagerCs>();
         NpcText.SetActive(false);
+        NpcInterActionText.SetActive(false);
         thingToEnable.SetActive(false);
         for (int i = 0; i < PickUps.Length; i++)
         {
@@ -26,20 +34,30 @@ public class NpcUiCs : MonoBehaviour
         }
     }
 	void OnTriggerEnter(Collider other)
-	{
-
-        GameObject.Find("PauseHandler").SetActive(false);
-        Object.FindObjectOfType<PauseCs>().OnPause();
-        thingToEnable.SetActive(true);
-        NpcText.SetActive(true);
-        // npc.SetInteractive();
-
-        for (int i = 0; i < PickUps.Length; i++)
+    {
+        NpcInterActionText.SetActive(true);
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            PickUps[i].SetActive(true);
-        }
-        this.gameObject.SetActive(false);
+            GameObject.Find("PauseHandler").SetActive(false);
+            Object.FindObjectOfType<PauseCs>().OnPause();
+            thingToEnable.SetActive(true);
+            NpcText.SetActive(true);
+            // npc.SetInteractive();
 
+            for (int i = 0; i < PickUps.Length; i++)
+            {
+                PickUps[i].SetActive(true);
+            }
+            NpcInterActionText.SetActive(false);
+            this.gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        NpcInterActionText.SetActive(false);
     }
 
 }
