@@ -47,13 +47,14 @@ public class PushCs : MonoBehaviour
 					textObj.SetActive(true);
 					if (Input.GetMouseButtonDown(0))
 					{
-						Debug.Log("Did Hit");
+                        fp.setPush(true);
+                        Debug.Log("Did Hit");
 						thingToPull = hit.transform.gameObject;
 						thingToPull.AddComponent<FixedJoint>();
 						thingToPull.GetComponent<FixedJoint>().connectedBody = GetComponentInParent<Rigidbody>();
 						thingToPull.GetComponentInParent<Rigidbody>().mass = 1;
 						thingToPull.GetComponent<PushObjectCs>().isPushing();
-						fp.setPush(true);
+						
 						fp.setSpeed(8);
 						cam.GetComponentInParent<CameraControl>().canMoveCheck(false);
 						GetComponent<UiHandlerCs>().setRay(false);

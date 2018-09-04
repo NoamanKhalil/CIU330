@@ -221,6 +221,7 @@ public class FpcontrollerCs : MonoBehaviour
 		}
 		else
 		{
+            Debug.Log(tempTime);
 			myCollider.enabled = false;
 			Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
 			rb.constraints = ~RigidbodyConstraints.FreezePositionY;
@@ -231,6 +232,7 @@ public class FpcontrollerCs : MonoBehaviour
                 
 				OnDie();
                 level.resetLevel();
+                tempTime = 5.0f;
 			}
 		}
 	}
