@@ -78,12 +78,15 @@ public class FpcontrollerCs : MonoBehaviour
     Vector3 lastPos;
 	void Start()
 	{
+        level = GameObject.Find("LevelManager").GetComponent<LevelManagerCs>();
         if (!myAnim)
         {
             myAnim = GetComponent<Animator>();
         }
-        staminaUi =GameObject.FindGameObjectWithTag("Stamina").GetComponent<Image>();
-        level = GameObject.Find("LevelManager").GetComponent<LevelManagerCs>();
+        if (level.isHappy&&!staminaUi)
+        {
+            staminaUi = GameObject.FindGameObjectWithTag("Stamina").GetComponent<Image>();
+        }
 		startPos = transform.position;
 		startRot = camera.transform.rotation;
 		rb = GetComponent<Rigidbody>();
@@ -106,7 +109,7 @@ public class FpcontrollerCs : MonoBehaviour
         Vector3 currentPos = transform.position;
         //AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
         // normal walk
-        if (!isRunning&& canCrouch && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (!isRunning&&!isHolding&& canCrouch && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             //Debug.Log("OnWalk");
             //walk anim
@@ -118,7 +121,7 @@ public class FpcontrollerCs : MonoBehaviour
         }
         // Idle
         // checks if not input is given via getaxis
-        if (!isRunning&&canCrouch &&currentPos ==lastPos)
+        if (!isRunning&&canCrouch&&!isHolding &&currentPos ==lastPos)
         {
            //Debug.Log(stateInfo.fullPathHash);
             //Debug.Log("IDLE");
@@ -135,9 +138,8 @@ public class FpcontrollerCs : MonoBehaviour
         {
             onAnim(3);
         }
-
-        // hold animations cant be syned in time for showcase 
-        /* (currentPos != lastPos && isHolding)
+        //hold animations cant be syned in time for showcase 
+        if(isHolding&& Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             // play walk holding anim
             onAnim(5);
@@ -146,7 +148,7 @@ public class FpcontrollerCs : MonoBehaviour
         {
             // play idle holding anim
             onAnim(8);
-        }*/
+        }
 
 
         if (Time.timeScale >= 1)
@@ -237,7 +239,7 @@ public class FpcontrollerCs : MonoBehaviour
 	void Crouch()
 	{
 		// on true
-		if (canCrouch && Input.GetKeyDown(KeyCode.LeftControl))
+        if (canCrouch&& Input.GetKeyDown(KeyCode.LeftControl))
 		{
             onAnim(3);
             canMove = false;
