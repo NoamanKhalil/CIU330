@@ -70,15 +70,19 @@ public class FpcontrollerCs : MonoBehaviour
     bool isRunning;
     bool isHolding;
     AudioSource aud;
-    LevelManagerCs level;
+    public LevelManagerCs level;
 
 	Vector3 coruchVelocity = Vector3.zero;
 	Vector3 startPos;
 	Quaternion startRot;
     Vector3 lastPos;
-	void Start()
-	{
+    void Awake()
+    {
         level = GameObject.Find("LevelManager").GetComponent<LevelManagerCs>();
+    }
+    void Start()
+	{
+
         if (!myAnim)
         {
             myAnim = GetComponent<Animator>();
@@ -179,7 +183,7 @@ public class FpcontrollerCs : MonoBehaviour
             {
                 if (!aud.isPlaying)
                 {
-                    aud.clip = myClip[4];
+                    aud.clip = myClip[3];
                     aud.Play();
                 }
             }
@@ -332,6 +336,10 @@ public class FpcontrollerCs : MonoBehaviour
             return true;
         else
             return false;
+    }
+    public bool isPlayerHolding()
+    {
+        return isHolding;
     }
     public void setPush(bool push)
 	{

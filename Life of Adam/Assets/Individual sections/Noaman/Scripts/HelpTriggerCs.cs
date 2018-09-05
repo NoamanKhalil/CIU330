@@ -7,6 +7,8 @@ public class HelpTriggerCs : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject thingToEnable;
+    [SerializeField]
+    private GameObject PauseThing;
 
 	// Use this for initialization
 	void Start ()
@@ -16,6 +18,7 @@ public class HelpTriggerCs : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
+        PauseThing.SetActive(false);
 		Time.timeScale = 0; 
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.Confined;

@@ -21,23 +21,28 @@ public class PushCs : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        if (!textObj)
+        fp = GetComponent<FpcontrollerCs>();
+        if (!textObj && !fp.level.isTutorial)
         {
             textObj = GameObject.FindGameObjectWithTag("PickIndicator");
+            textObj.SetActive(false);
         }
-		fp = GetComponent<FpcontrollerCs>();
-		textObj.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update () 
+    public void FindUiText()
+    {
+        textObj = GameObject.FindGameObjectWithTag("PickIndicator");
+        textObj.SetActive(false);
+    }
+    // Update is called once per frame
+    void Update () 
 	{
         Vector3 fwd = cam.transform.TransformDirection(Vector3.forward);
 		Vector3 sFwd = secondary.transform.TransformDirection(Vector3.forward);
 
 				Debug.DrawRay(cam.transform.position ,cam.transform.TransformDirection(Vector3.forward)* dist, Color.black);
 				Debug.DrawRay(secondary.transform.position ,secondary.transform.TransformDirection(Vector3.forward)* secondaryDist, Color.black);
-		if (thingToPull == null)
+        bool temp = fp.isPlayerHolding();
+        if (thingToPull == null&& textObj!=null&&temp ==false)
 		{
 			RaycastHit hit;
 
