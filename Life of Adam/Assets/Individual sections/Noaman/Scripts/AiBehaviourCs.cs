@@ -31,6 +31,8 @@ public class AiBehaviourCs : MonoBehaviour
 	public float minDist;
     [Header("dist before ttack player")]
 	public float attackDistance;
+    [Header("RayCast dist before ttack player")]
+    public float rayDistance;
     public LevelManagerCs day;
     
 	private bool isPathA;
@@ -81,9 +83,9 @@ public class AiBehaviourCs : MonoBehaviour
 
         RaycastHit hit;
 
-        Debug.DrawLine(transform.position, transform.position + fwd.normalized * attackDistance, Color.red);
-        Debug.DrawLine(transform.position, transform.position + leftD.normalized * attackDistance, Color.red);
-        Debug.DrawLine(transform.position, transform.position + rightD.normalized * attackDistance, Color.red);
+        Debug.DrawLine(transform.position, transform.position + fwd.normalized * (rayDistance*2f), Color.red);
+        Debug.DrawLine(transform.position, transform.position + leftD.normalized * (rayDistance *1.2f), Color.red);
+        Debug.DrawLine(transform.position, transform.position + rightD.normalized * (rayDistance *1.2f), Color.red);
 
 
 
@@ -92,9 +94,11 @@ public class AiBehaviourCs : MonoBehaviour
             Physics.Raycast(transform.position, rightD, out hit, attackDistance, layer, QueryTriggerInteraction.Ignore))
         {
             currentState = AiState.Chase;
+            Debug.Log("chase");
+          
         }
 
-        if (Vector3.Distance(this.transform.position, playerObj.transform.position) <=attackDistance)
+        if (Vector3.Distance(this.transform.position, playerObj.transform.position) <= 1f)
         {
 
             Debug.Log("You just died");
@@ -147,7 +151,7 @@ public class AiBehaviourCs : MonoBehaviour
 	{
 		agent.SetDestination(playerObj.transform.position);
         agent.speed = chaseSpeed;
-        //myAnimator.SetChase();
+        myAnimator.SetChase();
 	}
 
 
@@ -156,7 +160,7 @@ public class AiBehaviourCs : MonoBehaviour
         agent.speed = speed;
         if (arr.Length == 0)
             return;
-        //myAnimator.SetPatrol();
+        myAnimator.SetPatrol();
         // Set the agent to go to the currently selected destination.
         agent.destination = arr[posPoint].position;
         // Choose the next point in the array as the destination,

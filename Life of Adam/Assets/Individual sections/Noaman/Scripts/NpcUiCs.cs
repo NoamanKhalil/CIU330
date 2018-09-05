@@ -11,6 +11,9 @@ public class NpcUiCs : MonoBehaviour
     [Header("Add All pickable objects here")]
     [SerializeField]
     private GameObject[] PickUps;
+    [Header("Add Lightoobject door entrance")]
+    [SerializeField]
+    private GameObject[] HappyEntrance;
     public GameObject NpcText;
     public GameObject NpcInterActionText;
     public NpcAnimationCs npc;
@@ -52,6 +55,11 @@ public class NpcUiCs : MonoBehaviour
                 PickUps[i].SetActive(true);
             }
             NpcInterActionText.SetActive(false);
+            for (int i = 0; i < HappyEntrance.Length; i++)
+            {
+               
+                HappyEntrance[i].SetActive(false);
+            }
             this.gameObject.SetActive(false);
         }
     }

@@ -311,7 +311,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6144314
+      - time: 0.50790966
         functionName: PickEvent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: e9c516f0652ce8341bb99e6ab6cb05c2,

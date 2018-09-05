@@ -31,106 +31,118 @@ public class TimerShader : MonoBehaviour
     public AudioSource aud;
     [Header("0 start audio for ability,1 for during audio activity , 2 deactivate ")]
     public AudioClip[] clip;
+    public FpcontrollerCs fp;
 	// Use this for initialization
 	void Start()
 	{
-        powerUI=GameObject.FindGameObjectWithTag("Ability").GetComponent<Image>();
+        fp = GetComponent<FpcontrollerCs>();
+        if (!powerUI&& !fp.level.isTutorial)
+        {
+            powerUI = GameObject.FindGameObjectWithTag("Ability").GetComponent<Image>();
+        }
+
         push = GameObject.FindGameObjectsWithTag(tagOfThePushable);
 		pick = GameObject.FindGameObjectsWithTag(tagOfPickable);
 		weak = GameObject.FindGameObjectsWithTag(tagOfTheWeak);
 		powerUiAlpha = 1;
 		timer = cooldownability;
 	}
-
+    // to be called on button click from UI event during tutorial
+    public void FindUiText()
+    {
+        powerUI = GameObject.FindGameObjectWithTag("Ability").GetComponent<Image>();
+    }
     // Update is called once per frame
     void Update ()
     {
-		timer += Time.deltaTime;
-	    // why is it counting up ?
-		coolDownEffectTimer += Time.deltaTime;
-		powerUI.fillAmount = powerUiAlpha;
-    
-
-
-		// when active UI alpha will be 1 
-		if (!effectActive)
-		{
-			powerUiAlpha = Mathf.Lerp(powerUiAlpha, 1, Time.deltaTime);
-		}
-		//wehn inactive the alpha value will decrese to 0 
-		else if (effectActive)
-		{
-			powerUiAlpha = Mathf.Lerp(powerUiAlpha, 0, Time.deltaTime);
-		}
-		// adjust alpha to be 
-
-        if (Input.GetKeyDown(KeyCode.Q) && !effectActive && timer >= cooldownability)
+        timer += Time.deltaTime;
+        coolDownEffectTimer += Time.deltaTime;
+       
+        if (powerUI!=null)
         {
-            if (!aud.isPlaying)
+            powerUI.fillAmount = powerUiAlpha;
+
+
+
+            // when active UI alpha will be 1 
+            if (!effectActive)
             {
-                aud.clip = clip[0];
-                aud.Play();
+                powerUiAlpha = Mathf.Lerp(powerUiAlpha, 1, Time.deltaTime);
             }
-            else 
+            //wehn inactive the alpha value will decrese to 0 
+            else if (effectActive)
             {
-                aud.Pause();
+                powerUiAlpha = Mathf.Lerp(powerUiAlpha, 0, Time.deltaTime);
             }
-            foreach (GameObject obj in push)
+            // adjust alpha to be 
+
+            if (Input.GetKeyDown(KeyCode.Q) && !effectActive && timer >= cooldownability)
             {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
-                obj.GetComponent<Renderer>().material.SetColor("_OutlineColor", pushColor);
+                if (!aud.isPlaying)
+                {
+                    aud.clip = clip[0];
+                    aud.Play();
+                }
+                else
+                {
+                    aud.Pause();
+                }
+                foreach (GameObject obj in push)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
+                    obj.GetComponent<Renderer>().material.SetColor("_OutlineColor", pushColor);
+                }
+                foreach (GameObject obj in pick)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
+                    obj.GetComponent<Renderer>().material.SetColor("_OutlineColor", pickColor);
+
+                }
+                foreach (GameObject obj in weak)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
+                    obj.GetComponent<Renderer>().material.SetColor("_OutlineColor", weakColor);
+
+                }
+                // cube.GetComponent<Renderer>().material = effectMaterial;
+                effectActive = true;
+                coolDownEffectTimer = 0;
             }
-            foreach (GameObject obj in pick)
+            if (coolDownEffectTimer >= cooldowneffect && effectActive)
             {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
-                obj.GetComponent<Renderer>().material.SetColor("_OutlineColor", pickColor);
+
+                if (!aud.isPlaying)
+                {
+                    aud.clip = clip[2];
+                    aud.Play();
+                }
+                else
+                {
+                    aud.Pause();
+                }
+                foreach (GameObject obj in push)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
+
+                }
+                foreach (GameObject obj in pick)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
+
+                }
+                foreach (GameObject obj in weak)
+                {
+                    obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
+                }
+                effectActive = false;
+                // cube.GetComponent<Renderer>().material = defaultMat;
+                timer = 0;
+                coolDownEffectTimer = 0;
 
             }
-            foreach (GameObject obj in weak)
-            {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 1.1f);
-                obj.GetComponent<Renderer>().material.SetColor("_OutlineColor",weakColor);
 
-            }
-            // cube.GetComponent<Renderer>().material = effectMaterial;
-            effectActive = true;
-            coolDownEffectTimer = 0;
+
         }
-        if(coolDownEffectTimer >= cooldowneffect&& effectActive)
-        {
-
-            if (!aud.isPlaying)
-            {
-                aud.clip = clip[2];
-                aud.Play();
-            }
-            else
-            {
-                aud.Pause();
-            }
-            foreach (GameObject obj in push)
-            {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
-                
-            }
-            foreach (GameObject obj in pick)
-            {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
-                
-            }
-            foreach (GameObject obj in weak)
-            {
-                obj.GetComponent<Renderer>().material.SetFloat("_OutlineSize", 0);
-            }
-            effectActive = false;
-           // cube.GetComponent<Renderer>().material = defaultMat;
-            timer = 0;
-            coolDownEffectTimer = 0;
-
-        }
-        
-
-      
        
         
 

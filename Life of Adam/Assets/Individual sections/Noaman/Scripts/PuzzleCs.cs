@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PuzzleCs : MonoBehaviour
 {
-	[SerializeField]
+    [Header("Add the cube to of the shape slot to enable")]
+    [SerializeField]
 	private GameObject shapeSlot;
     public float sphereRadius;
     public LayerMask layer;
     [SerializeField]
     private float Dist;
-    [Header("Add the cube to of the corresponding name IE: the cube to point")]
+    [Header("Add the cube to of the corresponding name, shape to pick")]
     [SerializeField]
     private GameObject otherObj;
 
@@ -25,10 +26,13 @@ public class PuzzleCs : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		shapeSlot.SetActive(false);
+        if (!player)
+        {
+            player = GameObject.Find("Player");
+        }
+        shapeSlot.SetActive(false);
         aud = GetComponent<AudioSource>();
 	}
-	
 	// Update is called once per frame
 	void Update ()
     {

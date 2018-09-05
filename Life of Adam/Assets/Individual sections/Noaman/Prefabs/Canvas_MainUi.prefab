@@ -44,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1442705719607868
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 222809498368319120}
   - component: {fileID: 114302223419750888}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text-Timer
   m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

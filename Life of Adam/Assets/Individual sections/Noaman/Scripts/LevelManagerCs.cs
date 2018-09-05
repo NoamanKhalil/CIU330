@@ -21,11 +21,11 @@ public class LevelManagerCs : MonoBehaviour
 	public string sceneName;
 	public PuzzleCs[] puzzle;
     public FpcontrollerCs player;
+    bool isTutorialTimer;
 	// Update is called once per frame
 	void Update () 
 	{
-    
-
+  
 		if (lives <= 0)
 		{
 			//timer = 1.0f;
@@ -105,8 +105,18 @@ public class LevelManagerCs : MonoBehaviour
 			int seconds = Mathf.FloorToInt(levelTimer - minutes * 60);
 			string timeString = string.Format("{0:0}:{1:00}", minutes, seconds);
 			timerTxt.text = timeString;
-		}
+            Debug.Log("IsHappy timer");
+        }
+        if (isTutorialTimer)
+        {
+            levelTimer -= Time.deltaTime;
 
+            int minutes = Mathf.FloorToInt(levelTimer / 60F);
+            int seconds = Mathf.FloorToInt(levelTimer - minutes * 60);
+            string timeString = string.Format("{0:0}:{1:00}", minutes, seconds);
+            timerTxt.text = timeString;
+            //Debug.Log("IstutorialTimer");
+        }
         //------------------------------------------//
         //Only happens when in tutorial
         if (isTutorial)
@@ -120,7 +130,10 @@ public class LevelManagerCs : MonoBehaviour
         }
 
     }
-
+    public void findTimer()
+    {
+        timerTxt= GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
+    }
 
     void loadMyScene ()
     {
@@ -131,10 +144,27 @@ public class LevelManagerCs : MonoBehaviour
             SceneManager.LoadScene(sceneName);
         }
     }
+    public void setTutorialTimerTrue()
+    {
+        if (timerTxt==null)
+        {
+            findTimer();
+        }
+        isTutorialTimer = true;
+        levelTimer = 120.0f;
+        //Debug.Log("setTutorial");
+    }
+    public void setTutorialTimerFalse()
+    {
+        isTutorialTimer = false;
+    }
 
+
+    // to be called in day 1,2,3 happy 
 	public void setTimerTrue()
 	{
-		isHappy = true;
+        isHappy = true;
+        Debug.Log("setTimerTrue");
 	}
 	
     public void setTimerFalse()

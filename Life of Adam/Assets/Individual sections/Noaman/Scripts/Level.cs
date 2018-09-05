@@ -34,7 +34,7 @@ public class Level : MonoBehaviour
 		{
 			can.FadeOut();
 			canProgress = true;
-            
+            Debug.Log("FadeOut");
 		}
 
 	}

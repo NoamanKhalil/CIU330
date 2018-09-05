@@ -77,7 +77,7 @@ public class PickUpCs : MonoBehaviour
 				//Debug.Log("Did Hit");
 				if (hit.collider.gameObject.tag == "Red" || hit.collider.gameObject.tag == "Blue"|| hit.collider.gameObject.tag == "Green" || hit.collider.gameObject.tag == "Pick")
 				{
-                    Debug.Log("PICKUP CALLED");
+                    //Debug.Log("PICKUP CALLED");
                     // hinge joint is causing issues with the collision
                     tempPickedObj = hit.collider.gameObject;
                     fp.onAnim(6);
@@ -125,6 +125,11 @@ public class PickUpCs : MonoBehaviour
 				isholding = false;
 				//day.setBlueTrue();
 				GetComponent<UiHandlerCs>().setRay(true);
+                pickupPoint.transform.DetachChildren();
+                pickedObj = null;
+                bluePlacePos.GetComponent<PuzzleCs>().setSlotActive();
+                day.setBlueTrue();
+                fp.setHolding(false);
                 //fp.setHolding(false);
             }
 			else if (pickedObj.tag == "Red" && Vector3.Distance (this.transform.position, redPlacePos.transform.position)<Dist&&redPlacePos!= null)
@@ -143,6 +148,11 @@ public class PickUpCs : MonoBehaviour
 				isholding = false;
 				day.setRedTrue();
 				GetComponent<UiHandlerCs>().setRay(true);
+                pickupPoint.transform.DetachChildren();
+                pickedObj = null;
+                redPlacePos.GetComponent<PuzzleCs>().setSlotActive();
+                day.setRedTrue();
+                fp.setHolding(false);
                 //fp.setHolding(false);
             }
             else if (pickedObj.tag == "Green" && Vector3.Distance(this.transform.position, greenPlacePos.transform.position) < Dist && greenPlacePos != null)
@@ -161,6 +171,11 @@ public class PickUpCs : MonoBehaviour
                 isholding = false;
                 day.setGreenTrue();
                 GetComponent<UiHandlerCs>().setRay(true);
+                pickupPoint.transform.DetachChildren();
+                pickedObj = null;
+                greenPlacePos.GetComponent<PuzzleCs>().setSlotActive();
+                day.setGreenTrue();
+                fp.setHolding(false);
                 //fp.setHolding(false);
             }
             else if (pickedObj != null &&isholding)
@@ -192,34 +207,22 @@ public class PickUpCs : MonoBehaviour
     {
         if (pickedObj.tag == "Blue")
         {
-            pickupPoint.transform.DetachChildren();
-            pickedObj = null;
-            bluePlacePos.GetComponent<PuzzleCs>().setSlotActive();
-            day.setBlueTrue();
-            fp.setHolding(false);
+
         }
         else if (pickedObj.tag == "Red")
         {
-            pickupPoint.transform.DetachChildren();
-            pickedObj = null;
-            redPlacePos.GetComponent<PuzzleCs>().setSlotActive();
-            day.setRedTrue();
-            fp.setHolding(false);
+
         }
         else if (pickedObj.tag == "Green")
         {
-            pickupPoint.transform.DetachChildren();
-            pickedObj = null;
-            greenPlacePos.GetComponent<PuzzleCs>().setSlotActive();
-            day.setGreenTrue();
-            fp.setHolding(false);
+           
         }
     }
 
     // called from the animator
     void PickEvent()
     {
-        Debug.Log("PICKUP EVENT CALLED");
+        //Debug.Log("PICKUP EVENT CALLED");
         tempPickedObj.transform.rotation = Quaternion.identity;
         tempPickedObj.GetComponent<Rigidbody>().useGravity = false;
         pickedObj = tempPickedObj;
@@ -233,7 +236,7 @@ public class PickUpCs : MonoBehaviour
         //fp.setSpeed(15f);
         GetComponent<UiHandlerCs>().setRay(false);
         //pickupPoint.GetComponentInChildren<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        Debug.Log("Picked object");
+        //Debug.Log("Picked object");
 
 
     }

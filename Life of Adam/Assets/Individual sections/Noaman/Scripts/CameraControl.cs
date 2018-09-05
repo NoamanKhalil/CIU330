@@ -32,15 +32,15 @@ public class CameraControl : MonoBehaviour
 	}
 	void Update () 
 	{
-
 		if (canMove && Time.timeScale== 1)
 		{
 			CameraMove();
 		}
 		else
 		{
-			//this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, new Vector3(25, 0, 0), Time.deltaTime*Smoothness);
-		}
+            MouseControl.y = Mathf.Clamp(MouseControl.y, minClamp, maxClamp);
+            //this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, new Vector3(25, 0, 0), Time.deltaTime*Smoothness);
+        }
     }
 	void CameraMove()
 	{

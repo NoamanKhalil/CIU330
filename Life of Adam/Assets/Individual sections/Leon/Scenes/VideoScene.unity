@@ -196,7 +196,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 5bd40f460a1e6ec4c88c1fa2f8cfdbd5,
+          m_ObjectArgument: {fileID: 32900000, guid: dc4bb77dae589496e870cf7f1f7ddd40,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -527,7 +527,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941452521}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: b23ab95c238630e41aaa238ef68a4311, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6dcdeb3d5f9014a4da0bd111270a5cf6, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -550,7 +550,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!23 &941452523
@@ -1055,7 +1055,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 09e9a02e84f8e2e48b0040b9c53017a7,
+          m_ObjectArgument: {fileID: 32900000, guid: a7ac6761479414b0f830329ee766f4da,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -1219,9 +1219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 941452522}
   buttons: {fileID: 1311444441}
-  mainTimer: 13
-  goodTimer: 4
-  badTimer: 4
+  mainTimer: 75
+  goodTimer: 24
+  badTimer: 29
   levelName: TAreaPost
 --- !u!114 &1523942930
 MonoBehaviour:
