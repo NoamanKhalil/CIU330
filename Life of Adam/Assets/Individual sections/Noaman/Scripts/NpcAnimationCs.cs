@@ -26,5 +26,13 @@ public class NpcAnimationCs : MonoBehaviour {
     public void SetInteractive()
     {
         myAnim.SetInteger(AiAnimStateName, AnimStateNum);
+
+        Invoke("setIdle", 2);
+    }
+
+    public void setIdle()
+    {
+        myAnim.SetInteger(AiAnimStateName, 0);
+        Debug.Log("TEST");
     }
 }

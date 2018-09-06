@@ -22,8 +22,13 @@ public class LevelManagerCs : MonoBehaviour
 	public PuzzleCs[] puzzle;
     public FpcontrollerCs player;
     bool isTutorialTimer;
-	// Update is called once per frame
-	void Update () 
+    float tempTmer;
+    // Update is called once per frame
+     void Start()
+    {
+        tempTmer = levelTimer;
+    }
+    void Update () 
 	{
   
 		if (lives <= 0)
@@ -194,14 +199,14 @@ public class LevelManagerCs : MonoBehaviour
 	{
         Debug.Log("ManyMore");
         lives -= 1;
-		levelTimer = 120;
+		levelTimer = tempTmer;
 		blue = false;
 		red = false;
         for (int i = 0; i < puzzle.Length-1; i++)
         {
             puzzle[i].Reset();
         }
-        player.OnDie();;
+        //player.OnDie();;
 
     }
 }

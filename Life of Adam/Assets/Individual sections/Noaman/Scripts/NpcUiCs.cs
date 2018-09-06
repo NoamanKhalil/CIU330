@@ -47,7 +47,7 @@ public class NpcUiCs : MonoBehaviour
             GameObject.Find("PauseHandler").SetActive(false);
             Object.FindObjectOfType<PauseCs>().OnPause();
             thingToEnable.SetActive(true);
-            NpcText.SetActive(true);
+           // NpcText.SetActive(true);
             // npc.SetInteractive();
 
             for (int i = 0; i < PickUps.Length; i++)

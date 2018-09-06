@@ -21,7 +21,7 @@ public class HelpTriggerCs : MonoBehaviour
         PauseThing.SetActive(false);
 		Time.timeScale = 0; 
 		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.lockState = CursorLockMode.None;
 		thingToEnable.SetActive(true);
 		this.gameObject.SetActive(false);
 	}
