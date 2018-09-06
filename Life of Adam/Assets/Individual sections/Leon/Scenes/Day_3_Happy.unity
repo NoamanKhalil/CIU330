@@ -504,6 +504,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1387853901}
+    - target: {fileID: 114849068278841734, guid: 880f7676e3f1b4d1bbfa3c2cd196ecfb,
+        type: 2}
+      propertyPath: otherObj
+      value: 
+      objectReference: {fileID: 722336940}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 880f7676e3f1b4d1bbfa3c2cd196ecfb, type: 2}
   m_IsPrefabParent: 0
@@ -9571,6 +9576,8 @@ GameObject:
   - component: {fileID: 911088991}
   - component: {fileID: 911088990}
   - component: {fileID: 911088992}
+  - component: {fileID: 911088994}
+  - component: {fileID: 911088993}
   m_Layer: 0
   m_Name: Weak Object
   m_TagString: Weak
@@ -9647,6 +9654,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.130477, y: 1.1304772, z: 0.33089668}
   m_Center: {x: 0.0000009536743, y: 0.000012397766, z: -0.00000031292439}
+--- !u!114 &911088993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911088988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed50710ee0405485f9d39ab802da7973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1387853901}
+  distToDrop: 1.5
+--- !u!54 &911088994
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911088988}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &917530619
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,7 +11652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1387853901}
-  distToDrop: 1
+  distToDrop: 1.5
 --- !u!54 &1045604570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12824,6 +12859,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1387853901}
+    - target: {fileID: 114034913343794486, guid: 61b84dc4f11584115bd1aebedb78567a,
+        type: 2}
+      propertyPath: otherObj
+      value: 
+      objectReference: {fileID: 1619603890}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61b84dc4f11584115bd1aebedb78567a, type: 2}
   m_IsPrefabParent: 0

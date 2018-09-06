@@ -3630,20 +3630,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &338737797
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400158, guid: 0b63da94c156c7647aaa5d269032863c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 338737796}
-  m_LocalRotation: {x: -0.7071001, y: 0.0030889953, z: 0.003088967, w: -0.7071001}
+  m_LocalRotation: {x: 0.060480054, y: 0.70451564, z: 0.70451564, w: 0.060480054}
   m_LocalPosition: {x: 9.548366, y: 2.4590871, z: -0.21130618}
   m_LocalScale: {x: 0.8121505, y: 0.8551375, z: 0.8121505}
   m_Children: []
   m_Father: {fileID: 832473462}
   m_RootOrder: 49
-  m_LocalEulerAnglesHint: {x: 89.50101, y: -90.00001, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: -99.812996, y: -90, z: -90}
 --- !u!65 &338737798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3717,7 +3717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &341699425
 Transform:
   m_ObjectHideFlags: 0
@@ -4981,7 +4981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &552031085
 Transform:
   m_ObjectHideFlags: 0
@@ -6669,6 +6669,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.6503138
       objectReference: {fileID: 0}
+    - target: {fileID: 114034913343794486, guid: 61b84dc4f11584115bd1aebedb78567a,
+        type: 2}
+      propertyPath: otherObj
+      value: 
+      objectReference: {fileID: 2079257499}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61b84dc4f11584115bd1aebedb78567a, type: 2}
   m_IsPrefabParent: 0
@@ -6689,20 +6694,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &780064436
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400164, guid: 0b63da94c156c7647aaa5d269032863c, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 780064435}
-  m_LocalRotation: {x: -0.4982435, y: 0.5017503, z: 0.5017503, w: -0.49824363}
+  m_LocalRotation: {x: 0.47364703, y: 0.5250319, z: 0.5250319, w: 0.47364703}
   m_LocalPosition: {x: -1.1196836, y: -1.7847593, z: -0.21130618}
   m_LocalScale: {x: 0.8121505, y: 0.8551375, z: 0.8121505}
   m_Children: []
   m_Father: {fileID: 832473462}
   m_RootOrder: 52
-  m_LocalEulerAnglesHint: {x: -0.402, y: -90.00001, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: -174.109, y: -90, z: -90}
 --- !u!65 &780064437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7970,6 +7975,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.34952173
       objectReference: {fileID: 0}
+    - target: {fileID: 114548322888595792, guid: e2eef006c3782445cb36681a55cb5c4b,
+        type: 2}
+      propertyPath: otherObj
+      value: 
+      objectReference: {fileID: 898733226}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e2eef006c3782445cb36681a55cb5c4b, type: 2}
   m_IsPrefabParent: 0
@@ -7990,7 +8000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1058045154
 Transform:
   m_ObjectHideFlags: 0
@@ -10394,7 +10404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1434661257
 Transform:
   m_ObjectHideFlags: 0
@@ -10630,7 +10640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1475035032
 Transform:
   m_ObjectHideFlags: 0
@@ -12714,6 +12724,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.653312
       objectReference: {fileID: 0}
+    - target: {fileID: 114849068278841734, guid: 880f7676e3f1b4d1bbfa3c2cd196ecfb,
+        type: 2}
+      propertyPath: otherObj
+      value: 
+      objectReference: {fileID: 1595707764}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 880f7676e3f1b4d1bbfa3c2cd196ecfb, type: 2}
   m_IsPrefabParent: 0

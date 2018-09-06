@@ -196,7 +196,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 48b45b734dc6341a6800c5a95e13be39,
+          m_ObjectArgument: {fileID: 32900000, guid: d8f7e7ef32c574614952f23f0a7d58ce,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -528,7 +528,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941452521}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: d0159827935d443069f8762d8f158684, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 2d4eb9873a76b435796841db055f87ca, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -542,7 +542,7 @@ VideoPlayer:
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 941452524}
+  - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -1071,7 +1071,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 236a5aac2a45c4c64b3ae0e8b84f3d8d,
+          m_ObjectArgument: {fileID: 32900000, guid: 6b086f6d1f352421bbcc991bc04fd9e7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0

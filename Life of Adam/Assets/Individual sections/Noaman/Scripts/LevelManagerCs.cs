@@ -86,12 +86,12 @@ public class LevelManagerCs : MonoBehaviour
         }
         //------------------------------------------//
         //Only happens when happy 
-        if (isHappy&& (isDayOne||isDayTwo||isDayThree)&&levelTimer<=0&&lives>0)
+        /*if (isHappy&& (isDayOne||isDayTwo||isDayThree)&&levelTimer<=0&&lives>0)
         {
             GetComponent<CanvasFadeCs>().FadeOut();
             resetLevel();
 
-        }
+        }*/
         else if (isHappy&&(isDayOne || isDayTwo || isDayThree)&& lives <= 0)
         {
             loadMyScene();
@@ -105,7 +105,7 @@ public class LevelManagerCs : MonoBehaviour
 			int seconds = Mathf.FloorToInt(levelTimer - minutes * 60);
 			string timeString = string.Format("{0:0}:{1:00}", minutes, seconds);
 			timerTxt.text = timeString;
-            Debug.Log("IsHappy timer");
+           // Debug.Log("IsHappy timer");
         }
         if (isTutorialTimer)
         {
@@ -164,7 +164,7 @@ public class LevelManagerCs : MonoBehaviour
 	public void setTimerTrue()
 	{
         isHappy = true;
-        Debug.Log("setTimerTrue");
+        //Debug.Log("setTimerTrue");
 	}
 	
     public void setTimerFalse()
@@ -192,11 +192,12 @@ public class LevelManagerCs : MonoBehaviour
     }
     public void resetLevel()
 	{
-		lives--;
+        Debug.Log("ManyMore");
+        lives -= 1;
 		levelTimer = 120;
 		blue = false;
 		red = false;
-        for (int i = 0; i < puzzle.Length; i++)
+        for (int i = 0; i < puzzle.Length-1; i++)
         {
             puzzle[i].Reset();
         }

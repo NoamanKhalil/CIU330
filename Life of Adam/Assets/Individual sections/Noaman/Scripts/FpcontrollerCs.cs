@@ -111,6 +111,7 @@ public class FpcontrollerCs : MonoBehaviour
 	void Update()
 	{
         Vector3 currentPos = transform.position;
+        bool tempColliderCheck = myCollider.gameObject.active;
         //AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
         // normal walk
         if (!isRunning&&!isHolding&& canCrouch && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
@@ -215,27 +216,34 @@ public class FpcontrollerCs : MonoBehaviour
 		float distance = 3f;
 		Vector3 dirD = Vector3.down;
 		Vector3 pos = transform.position;
-		//pos.x += 0.5f;
-
+        //pos.x += 0.5f;
+        bool canPlayerDie;
 		if (Physics.Raycast(pos, dirD, out hit, distance))
 		{
 			rb.constraints= RigidbodyConstraints.FreezePositionY|RigidbodyConstraints.FreezeRotation;
-			//Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
-
+            //Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
+            canDie = true;
 		}
 		else
 		{
-            Debug.Log(tempTime);
+            //Debug.Log(tempTime);
 			myCollider.enabled = false;
-			Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
+			//Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
 			rb.constraints = ~RigidbodyConstraints.FreezePositionY;
 			rb.AddForce(new Vector3(0, -jumpVel, 0), ForceMode.Impulse);
 			tempTime -= Time.deltaTime;
 			if (tempTime<=0)
 			{
-                
+
 				OnDie();
-                level.resetLevel();
+                if (canDie)
+                {
+                    level.resetLevel();
+                    // set bool back to true
+                    Debug.Log("Die manyTIMES");
+                    canDie = false;
+                }
+
                 tempTime = 5.0f;
 			}
 		}
