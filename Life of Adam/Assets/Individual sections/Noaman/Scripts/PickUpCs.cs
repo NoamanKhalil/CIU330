@@ -106,13 +106,13 @@ public class PickUpCs : MonoBehaviour
 		// when a object can be dropped 
 		else if ((Input.GetMouseButtonDown(0)) && isholding == true )
 		{
-            Debug.Log("trying to drop object");
+            //Debug.Log("trying to drop object");
 			//Debug.Log(Vector3.Distance(this.transform.position, bluePlacePos.transform.position));
 			//hit.collider.gameObject.GetComponent<Test>().setSlotActive();
 			if (pickedObj.tag == "Blue"&& Vector3.Distance (this.transform.position, bluePlacePos.transform.position)<Dist&& bluePlacePos!=null)
 			{
                 fp.onAnim(7);
-				Debug.Log("blue code called ");
+				//Debug.Log("blue code called ");
                 Rigidbody tempRb= GetComponentInChildren<Rigidbody>();
 				//fp.setSpeed(4.0f);
 				//Destroy(pickupPoint.GetComponentInChildren<FixedJoint>());
@@ -135,7 +135,7 @@ public class PickUpCs : MonoBehaviour
 			else if (pickedObj.tag == "Red" && Vector3.Distance (this.transform.position, redPlacePos.transform.position)<Dist&&redPlacePos!= null)
 			{
                 fp.onAnim(7);
-                Debug.Log("red code called ");
+                //Debug.Log("red code called ");
 				Rigidbody tempRb = GetComponentInChildren<Rigidbody>();
 				//fp.setSpeed(8.0f);
                // Destroy(pickupPoint.GetComponentInChildren<FixedJoint>());
@@ -158,7 +158,7 @@ public class PickUpCs : MonoBehaviour
             else if (pickedObj.tag == "Green" && Vector3.Distance(this.transform.position, greenPlacePos.transform.position) < Dist && greenPlacePos != null)
             {
                 fp.onAnim(7);
-                Debug.Log("Green code called ");
+               // Debug.Log("Green code called ");
                 Rigidbody tempRb = GetComponentInChildren<Rigidbody>();
                 //fp.setSpeed(8.0f);
                // Destroy(pickupPoint.GetComponentInChildren<FixedJoint>());
@@ -181,11 +181,11 @@ public class PickUpCs : MonoBehaviour
             else if (pickedObj != null &&isholding)
 			{
                 fp.onAnim(0);
-                Debug.Log("Null object called ");
+                //Debug.Log("Null object called ");
 				//fp.setSpeed(8.0f);
 				pickupPoint.GetComponentInChildren<Rigidbody>().constraints &= ~(RigidbodyConstraints.FreezePositionX |RigidbodyConstraints.FreezePositionY| RigidbodyConstraints.FreezePositionZ) ;
                 //Destroy(pickupPoint.GetComponentInChildren<FixedJoint>());
-				Debug.Log("Object dropped");
+				//Debug.Log("Object dropped");
 				pickupPoint.GetComponentInChildren<Collider>().enabled = true;
 				pickupPoint.GetComponentInChildren<Rigidbody>().useGravity = true;
 				pickupPoint.transform.DetachChildren();
@@ -240,7 +240,25 @@ public class PickUpCs : MonoBehaviour
 
 
     }
-
+    public void DropObjectOnDie()
+    {
+        if (pickedObj != null)
+        {
+            Debug.Log("Dropper");
+            //Debug.Log("Null object called ");
+            //fp.setSpeed(8.0f);
+            pickupPoint.GetComponentInChildren<Rigidbody>().constraints &= ~(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ);
+            //Destroy(pickupPoint.GetComponentInChildren<FixedJoint>());
+            //Debug.Log("Object dropped");
+            pickupPoint.GetComponentInChildren<Collider>().enabled = true;
+            pickupPoint.GetComponentInChildren<Rigidbody>().useGravity = true;
+            pickupPoint.transform.DetachChildren();
+            pickedObj = null;
+            isholding = false;
+            GetComponent<UiHandlerCs>().setRay(true);
+            fp.setHolding(false);
+        }
+    }
     public void setCanDrop(bool drop)
 	{
 

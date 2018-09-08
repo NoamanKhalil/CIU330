@@ -234,16 +234,15 @@ public class FpcontrollerCs : MonoBehaviour
 			tempTime -= Time.deltaTime;
 			if (tempTime<=0)
 			{
-
-				OnDie();
                 if (canDie)
                 {
-                    level.resetLevel();
+                    GetComponent<PickUpCs>().DropObjectOnDie();
                     // set bool back to true
                     Debug.Log("Die manyTIMES");
+                    level.resetLevel();
                     canDie = false;
                 }
-
+                OnDie();
                 tempTime = 5.0f;
 			}
 		}
@@ -360,7 +359,8 @@ public class FpcontrollerCs : MonoBehaviour
     /* Called when player dies , initiated the coroutine to move back to the start postion smoothly */
 	public void OnDie()
 	{
-		StopAllCoroutines();
+        GetComponent<PickUpCs>().DropObjectOnDie();
+        StopAllCoroutines();
 		StartCoroutine(Die(this.transform, startPos, deathSmoothness));
 	}
 

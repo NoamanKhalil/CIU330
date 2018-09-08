@@ -362,6 +362,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ef15afdc4e5747445b49c6a3aeb70769, type: 2}
+    - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
+        type: 2}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
+        type: 2}
+      propertyPath: chaseSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98b185851043c4027afa8e83d06124ca, type: 2}
   m_IsPrefabParent: 0

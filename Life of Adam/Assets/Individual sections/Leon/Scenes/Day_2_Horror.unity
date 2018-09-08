@@ -808,13 +808,23 @@ Prefab:
     - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
         type: 2}
       propertyPath: chaseSpeed
-      value: 6
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 137292202775732632, guid: 98b185851043c4027afa8e83d06124ca,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ef15afdc4e5747445b49c6a3aeb70769, type: 2}
+    - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
+        type: 2}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114764604414510828, guid: 98b185851043c4027afa8e83d06124ca,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98b185851043c4027afa8e83d06124ca, type: 2}
   m_IsPrefabParent: 0
@@ -1067,7 +1077,7 @@ Prefab:
     - target: {fileID: 82169951538452772, guid: 98d629acb890c4a60b4eb8173bfe7367,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114797257570750842, guid: 98d629acb890c4a60b4eb8173bfe7367,
         type: 2}

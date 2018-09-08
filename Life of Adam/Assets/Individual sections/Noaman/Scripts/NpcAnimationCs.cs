@@ -33,6 +33,6 @@ public class NpcAnimationCs : MonoBehaviour {
     public void setIdle()
     {
         myAnim.SetInteger(AiAnimStateName, 0);
-        Debug.Log("TEST");
+        //Debug.Log("TEST");
     }
 }
