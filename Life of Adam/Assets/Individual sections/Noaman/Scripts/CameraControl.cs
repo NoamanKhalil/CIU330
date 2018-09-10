@@ -36,7 +36,7 @@ public class CameraControl : MonoBehaviour
 		{
 			CameraMove();
 		}
-		else
+		else 
 		{
             MouseControl.y = Mathf.Clamp(MouseControl.y, minClamp, maxClamp);
             //this.transform.eulerAngles = Vector3.Lerp(this.transform.eulerAngles, new Vector3(25, 0, 0), Time.deltaTime*Smoothness);

@@ -13,7 +13,9 @@ public class GameManagerCs : MonoBehaviour
     public float badTimer;
     [Header("Give T Area name post-tutorial t area")]
     public string levelName;
+    [SerializeField]
     bool SceneA;
+    [SerializeField]
     bool SceneB;
 
 	// Use this for initialization
@@ -21,21 +23,25 @@ public class GameManagerCs : MonoBehaviour
     {
         SceneA = false;
         SceneB = false;
-
-	}
+        Debug.Log("GM StartCalled");
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
+       // Debug.Log("GM Update called");
         mainTimer -= Time.deltaTime;
+        Debug.Log(mainTimer);
         //Debug.Log(timer);
-        if (mainTimer <=0 && !SceneA &&!SceneB )
+        if (mainTimer <=0)
         {
-            videoPlayer.Pause();
+            //videoPlayer.Pause();
+            Debug.Log("OptionEnabled");
             buttons.SetActive(true);
         }
         if (SceneA)
         {
+            Debug.Log("SceneA");
             goodTimer -= Time.deltaTime;
             mainTimer = 10;
             if (goodTimer <= 0)
@@ -46,6 +52,7 @@ public class GameManagerCs : MonoBehaviour
         }
         if (SceneB)
         {
+            Debug.Log("SceneB");
             badTimer -= Time.deltaTime;
             mainTimer = 10;
             if (badTimer <= 0)

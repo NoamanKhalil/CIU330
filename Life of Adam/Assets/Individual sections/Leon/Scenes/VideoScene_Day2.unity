@@ -149,7 +149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.4, y: -156}
+  m_AnchoredPosition: {x: -174.39, y: -216}
   m_SizeDelta: {x: 527.2, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &230897866
@@ -196,7 +196,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: d8f7e7ef32c574614952f23f0a7d58ce,
+          m_ObjectArgument: {fileID: 32900000, guid: a53a47e613ffd4164966f349339301aa,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1523942930}
-        m_MethodName: isDayThree
+        m_MethodName: isDayTwo
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,7 +413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B. Friend
+  m_Text: A. Bully
 --- !u!222 &497475238
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A. Bully
+  m_Text: B. Friend
 --- !u!222 &641444205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941452521}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2d4eb9873a76b435796841db055f87ca, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 4dbf1158591ca4532b230b8c8d6d778b, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -542,7 +542,7 @@ VideoPlayer:
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 941452524}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -884,7 +884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.011489868, y: 0.0009841919}
+  m_AnchoredPosition: {x: -0.011505127, y: 0.0009841919}
   m_SizeDelta: {x: 0, y: -0.0019989014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1148071266
@@ -1103,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.4, y: -233}
+  m_AnchoredPosition: {x: -174.39, y: -156}
   m_SizeDelta: {x: 527.2, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448263464
@@ -1150,7 +1150,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 6b086f6d1f352421bbcc991bc04fd9e7,
+          m_ObjectArgument: {fileID: 32900000, guid: 13b15c81eb4bf4ad8806c0618ea8e9c9,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -1170,7 +1170,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1523942930}
-        m_MethodName: isDayThree
+        m_MethodName: isDayTwo
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1314,10 +1314,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 941452522}
   buttons: {fileID: 1311444441}
-  mainTimer: 89
+  mainTimer: 70
   goodTimer: 30
-  badTimer: 27
+  badTimer: 30
   levelName: TAreaPost
+  SceneA: 0
+  SceneB: 0
 --- !u!114 &1523942930
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -274,7 +274,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 74f303c759c2e40c8b9d2eee5e5701f1,
+          m_ObjectArgument: {fileID: 32900000, guid: 9d0417fb0ffe94f9d81ed60a028da9a8,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -606,7 +606,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941452521}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 308146e5f8db643a880f7bc1acefffb6, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: dddda8cf2f54a41cfb1135ab09d1689b, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -620,7 +620,7 @@ VideoPlayer:
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 941452524}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -629,8 +629,8 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
 --- !u!23 &941452523
 MeshRenderer:
@@ -1151,7 +1151,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 32900000, guid: 2fed410cc733f480e82c298cf360f1d5,
+          m_ObjectArgument: {fileID: 32900000, guid: 4b90b05c442714b17b6cd1fc08039472,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
           m_IntArgument: 0
@@ -1315,10 +1315,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 941452522}
   buttons: {fileID: 1311444441}
-  mainTimer: 28
-  goodTimer: 20
-  badTimer: 23
+  mainTimer: 0
+  goodTimer: 0
+  badTimer: 0
   levelName: TAreaPost
+  SceneA: 0
+  SceneB: 0
 --- !u!114 &1523942930
 MonoBehaviour:
   m_ObjectHideFlags: 0

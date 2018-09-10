@@ -30,7 +30,7 @@ public class LevelManagerCs : MonoBehaviour
     }
     void Update () 
 	{
-  
+        Debug.LogFormat("LevelManageroWorks");
 		if (lives <= 0)
 		{
 			//timer = 1.0f;

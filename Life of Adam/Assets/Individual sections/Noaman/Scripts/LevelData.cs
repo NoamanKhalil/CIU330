@@ -14,8 +14,14 @@ public class LevelData : MonoBehaviour {
     public bool isDayTwoBool;
     public bool isDayThreeBool;
 
-	// good choice pass true bad false 
-	public void isDayOne(bool isTrue)
+
+    private void Start()
+    {
+        Debug.Log("levelDataIsCalled");
+    }
+
+    // good choice pass true bad false 
+    public void isDayOne(bool isTrue)
 	{
 
 		PlayerPrefs.SetString("Day", "One");

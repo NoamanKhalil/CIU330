@@ -104,7 +104,7 @@ public class PickUpCs : MonoBehaviour
 
 		}
 		// when a object can be dropped 
-		else if ((Input.GetMouseButtonDown(0)) && isholding == true )
+		else if ((Input.GetMouseButtonDown(0)) && isholding == true &&Time.timeScale >= 1)
 		{
             //Debug.Log("trying to drop object");
 			//Debug.Log(Vector3.Distance(this.transform.position, bluePlacePos.transform.position));

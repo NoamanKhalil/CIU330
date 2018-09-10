@@ -206,6 +206,14 @@ public class FpcontrollerCs : MonoBehaviour
 			Crouch();
             GroundCheck();
             lastPos = currentPos;
+
+
+            if (this.transform.position == startPos)
+            {
+                //Debug.Log("capsule reset called");
+
+                this.GetComponent<CapsuleCollider>().enabled = true;
+            }
         }
         
 	}
@@ -223,7 +231,8 @@ public class FpcontrollerCs : MonoBehaviour
 			rb.constraints= RigidbodyConstraints.FreezePositionY|RigidbodyConstraints.FreezeRotation;
             //Debug.Log(Physics.Raycast(pos, dirD, out hit, distance));
             canDie = true;
-		}
+        
+        }
 		else
 		{
             //Debug.Log(tempTime);
@@ -258,7 +267,7 @@ public class FpcontrollerCs : MonoBehaviour
             canMove = false;
 			//Vector3 mypos = myCollider.bounds.center;
 			myCollider.center = crouchPosSize;
-			myCollider.height = 0.8f;
+			myCollider.height = 0.93f;
 			canCrouch = false;
             StopAllCoroutines();
 			StartCoroutine(onCrouch(camera.transform, crouchVect.transform.position, coruchSmoothness));
@@ -279,7 +288,7 @@ public class FpcontrollerCs : MonoBehaviour
 		{
 			canMove = false;
 			myCollider.center = startCrouchSize;
-			myCollider.height = 2f;
+			myCollider.height = 1.7f;
 			canCrouch = true;
             StopAllCoroutines();
 			StartCoroutine(onCrouch(camera.transform, initialCrouch.transform.position, coruchSmoothness));
@@ -419,7 +428,7 @@ public class FpcontrollerCs : MonoBehaviour
 
 				yield return null;
 			}
-
+            myCollider.enabled.Equals(true);
 			yield return null;
 		}
 
