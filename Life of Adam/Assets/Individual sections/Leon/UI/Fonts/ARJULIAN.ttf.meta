@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 90c45f4788813a94a98d2c09c5763a06
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AR JULIAN
+  fontNames:
+  - AR JULIAN
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2c0eadd53b6f9b747bbd4bc275d979ad, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
