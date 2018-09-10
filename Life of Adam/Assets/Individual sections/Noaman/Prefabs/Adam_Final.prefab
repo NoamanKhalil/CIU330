@@ -520,8 +520,8 @@ GameObject:
   - component: {fileID: 114750485886787630}
   - component: {fileID: 54057769998170096}
   - component: {fileID: 135045496806453894}
-  - component: {fileID: 59660283654803640}
   - component: {fileID: 82977051476809172}
+  - component: {fileID: 59268568796718416}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3833,7 +3833,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!59 &59660283654803640
+--- !u!59 &59268568796718416
 HingeJoint:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4242,8 +4242,10 @@ MonoBehaviour:
   coruchSmoothness: 0.3
   initialCrouch: {fileID: 4425258818480762}
   crouchVect: {fileID: 4423790008003730}
-  crouchPosSize: {x: 0, y: 0.55, z: 0}
+  crouchPosSize: {x: 0, y: 0.6, z: 0}
+  startPosHeight: 1.7
   startCrouchSize: {x: 0, y: 0.9, z: 0}
+  startCrouchHeight: 0.6
   tempTime: 5
   staminaUi: {fileID: 0}
   staminaRegenSpeed: 10
@@ -4404,7 +4406,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 01dd2adf8cddd344ca964aa1e7a0add9, type: 3}
   - {fileID: 8300000, guid: 084543f3599ca714db05dbc100fd6300, type: 3}
   - {fileID: 8300000, guid: 69ef84be8f6de4a48b0f14a1d088a932, type: 3}
-  fp: {fileID: 0}
+  fp: {fileID: 114174417042805240}
 --- !u!114 &114777662791361760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4564,7 +4566,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136891242975419764
 CapsuleCollider:

@@ -4325,16 +4325,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
-    - target: {fileID: 114932246760516620, guid: 9ff052ec98eda4cf891153f2001f306a,
+    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
         type: 2}
-      propertyPath: redPlacePos
+      propertyPath: staminaUi
       value: 
-      objectReference: {fileID: 261245153}
-    - target: {fileID: 114932246760516620, guid: 9ff052ec98eda4cf891153f2001f306a,
+      objectReference: {fileID: 2054841781}
+    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
         type: 2}
-      propertyPath: day
+      propertyPath: level
       value: 
       objectReference: {fileID: 1532945646}
+    - target: {fileID: 114519017123136720, guid: 9ff052ec98eda4cf891153f2001f306a,
+        type: 2}
+      propertyPath: textObj
+      value: 
+      objectReference: {fileID: 2088457565}
     - target: {fileID: 114777133893578446, guid: 9ff052ec98eda4cf891153f2001f306a,
         type: 2}
       propertyPath: pick.Array.data[0]
@@ -4360,58 +4365,17 @@ Prefab:
       propertyPath: powerUI
       value: 
       objectReference: {fileID: 2073480448}
-    - target: {fileID: 114519017123136720, guid: 9ff052ec98eda4cf891153f2001f306a,
+    - target: {fileID: 114932246760516620, guid: 9ff052ec98eda4cf891153f2001f306a,
         type: 2}
-      propertyPath: textObj
+      propertyPath: redPlacePos
       value: 
-      objectReference: {fileID: 2088457565}
-    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
+      objectReference: {fileID: 261245153}
+    - target: {fileID: 114932246760516620, guid: 9ff052ec98eda4cf891153f2001f306a,
         type: 2}
-      propertyPath: staminaUi
-      value: 
-      objectReference: {fileID: 2054841781}
-    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: level
+      propertyPath: day
       value: 
       objectReference: {fileID: 1532945646}
-    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: crouchPosSize.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 59660283654803640, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: m_AutoConfigureConnectedAnchor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135045496806453894, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 135045496806453894, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: startCrouchHeight
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114174417042805240, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: startPosHeight
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 136891242975419764, guid: 9ff052ec98eda4cf891153f2001f306a,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 59660283654803640, guid: 9ff052ec98eda4cf891153f2001f306a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ff052ec98eda4cf891153f2001f306a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &174361209 stripped
@@ -4419,50 +4383,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1028859620894918, guid: 9ff052ec98eda4cf891153f2001f306a,
     type: 2}
   m_PrefabInternal: {fileID: 174361208}
---- !u!1 &174361210 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1273223469454460, guid: 9ff052ec98eda4cf891153f2001f306a,
-    type: 2}
-  m_PrefabInternal: {fileID: 174361208}
---- !u!54 &174361211 stripped
-Rigidbody:
-  m_PrefabParentObject: {fileID: 54552747646307744, guid: 9ff052ec98eda4cf891153f2001f306a,
-    type: 2}
-  m_PrefabInternal: {fileID: 174361208}
---- !u!59 &174361212
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 174361210}
-  m_ConnectedBody: {fileID: 174361211}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.011999637, y: 1.528, z: 0.5099994}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 0
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &187987947
 GameObject:
   m_ObjectHideFlags: 0
