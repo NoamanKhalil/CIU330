@@ -45,7 +45,7 @@ public class GameManagerCs : MonoBehaviour
             goodTimer -= Time.deltaTime;
             if (goodTimer <= 0)
             {
-            
+                mainTimer = 1000;
                 SceneManager.LoadScene(levelName);
             }
         }
@@ -55,6 +55,7 @@ public class GameManagerCs : MonoBehaviour
             badTimer -= Time.deltaTime;
             if (badTimer <= 0)
             {
+                mainTimer = 1000;
                 SceneManager.LoadScene(levelName);
             }
         }

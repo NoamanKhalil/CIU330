@@ -32,10 +32,14 @@ public class FpcontrollerCs : MonoBehaviour
     [Header("When playe is crocuhed")]
     [SerializeField]
     private Vector3 crouchPosSize;
+    [SerializeField]
+    private float startPosHeight;
     [Header("When playe is not crocuhed")]
     [SerializeField]
     private Vector3 startCrouchSize;
-	[Header("Players fall time before they die")]
+    [SerializeField]
+    private float startCrouchHeight;
+    [Header("Players fall time before they die")]
 	[SerializeField]
     float tempTime = 5f;
 	[Header("refrence to the stamina image component")]
@@ -163,13 +167,13 @@ public class FpcontrollerCs : MonoBehaviour
 			{
 				if (!canPush)
 				{
-					forwardInput = Input.GetAxis("Vertical") * forwardVel;
-					straffeInput = Input.GetAxis("Horizontal") * forwardVel;
+					forwardInput = Input.GetAxisRaw("Vertical") * forwardVel;
+					straffeInput = Input.GetAxisRaw("Horizontal") * forwardVel;
 				}
-				else if (canPush && Input.GetAxis("Vertical") < 0 || Input.GetAxis("Vertical") > 0)
+				else if (canPush && Input.GetAxisRaw("Vertical") < 0 || Input.GetAxisRaw("Vertical") > 0)
 				{
 					//vector3.back
-					forwardInput = Input.GetAxis("Vertical") * forwardVel;
+					forwardInput = Input.GetAxisRaw("Vertical") * forwardVel;
 				}
 			}
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) &&(!canCrouch&& !canPush))
@@ -195,9 +199,18 @@ public class FpcontrollerCs : MonoBehaviour
                     aud.Pause();
                 }
             }
-			velocity = new Vector3(straffeInput, 0, forwardInput);
-			velocity = transform.TransformDirection(velocity);
-			rb.velocity = velocity;
+            // only moves if keys are pressed
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                velocity = new Vector3(straffeInput, 0, forwardInput);
+                velocity = transform.TransformDirection(velocity);
+                rb.velocity = velocity;
+            }
+            else
+            {
+                rb.velocity = Vector3.zero;
+            }
+
 			if (canJump & Input.GetKeyUp(KeyCode.Space))
 			{
 				rb.AddForce(new Vector3(0, jumpVel, 0), ForceMode.Impulse);
@@ -267,7 +280,7 @@ public class FpcontrollerCs : MonoBehaviour
             canMove = false;
 			//Vector3 mypos = myCollider.bounds.center;
 			myCollider.center = crouchPosSize;
-			myCollider.height = 0.93f;
+            myCollider.height = startCrouchHeight;
 			canCrouch = false;
             StopAllCoroutines();
 			StartCoroutine(onCrouch(camera.transform, crouchVect.transform.position, coruchSmoothness));
@@ -288,7 +301,7 @@ public class FpcontrollerCs : MonoBehaviour
 		{
 			canMove = false;
 			myCollider.center = startCrouchSize;
-			myCollider.height = 1.7f;
+            myCollider.height = startPosHeight;
 			canCrouch = true;
             StopAllCoroutines();
 			StartCoroutine(onCrouch(camera.transform, initialCrouch.transform.position, coruchSmoothness));
