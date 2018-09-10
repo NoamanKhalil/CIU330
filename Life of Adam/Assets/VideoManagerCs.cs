@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Video;
+﻿using UnityEngine.Video;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManagerCs : MonoBehaviour
-{
+public class VideoManagerCs : MonoBehaviour {
+
     public VideoPlayer videoPlayer;
     public GameObject buttons;
     public float mainTimer;
@@ -18,22 +16,22 @@ public class GameManagerCs : MonoBehaviour
     [SerializeField]
     bool SceneB;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         SceneA = false;
         SceneB = false;
         Debug.Log("GM StartCalled");
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-       // Debug.Log("GM Update called");
+        // Debug.Log("GM Update called");
         mainTimer -= Time.deltaTime;
-        Debug.Log(mainTimer);
+        //Debug.Log(Time.deltaTime);
         //Debug.Log(timer);
-        if (mainTimer <=0)
+        if (mainTimer <= 0)
         {
             //videoPlayer.Pause();
             Debug.Log("OptionEnabled");
@@ -43,9 +41,10 @@ public class GameManagerCs : MonoBehaviour
         {
             Debug.Log("SceneA");
             goodTimer -= Time.deltaTime;
+            mainTimer = 10;
             if (goodTimer <= 0)
             {
-            
+
                 SceneManager.LoadScene(levelName);
             }
         }
@@ -53,6 +52,7 @@ public class GameManagerCs : MonoBehaviour
         {
             Debug.Log("SceneB");
             badTimer -= Time.deltaTime;
+            mainTimer = 10;
             if (badTimer <= 0)
             {
                 SceneManager.LoadScene(levelName);

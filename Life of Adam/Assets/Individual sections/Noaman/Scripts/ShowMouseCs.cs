@@ -10,5 +10,6 @@ public class ShowMouseCs : MonoBehaviour
 	{
 		Cursor.visible = true;
 		Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1;
 	}
 }

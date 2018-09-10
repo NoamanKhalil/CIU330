@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_3_Happy
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &291964378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_1_Horror
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &348372679
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4033,7 +4033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_3_Horror
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &713665021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6594,7 +6594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_2_Happy
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &1074921055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7002,7 +7002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_2_Horror
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &1152212166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13059,7 +13059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Day_1_Happy
   can: {fileID: 1114438077}
-  timer: 4
+  timer: 1
 --- !u!65 &1827876201
 BoxCollider:
   m_ObjectHideFlags: 0
