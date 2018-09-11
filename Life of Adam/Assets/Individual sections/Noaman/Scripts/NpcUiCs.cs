@@ -17,7 +17,7 @@ public class NpcUiCs : MonoBehaviour
     public GameObject NpcText;
     public GameObject NpcInterActionText;
     public NpcAnimationCs npc;
-    private LevelManagerCs lv;
+    //private LevelManagerCs lv;
     
 	// Use this for initialization
 	void Start () 
@@ -27,15 +27,19 @@ public class NpcUiCs : MonoBehaviour
             thingToEnable=GameObject.FindWithTag("NpcEvent");
         }
         //NpcInterActionText = GameObject.FindWithTag("NpcInteract");
-        lv= Object.FindObjectOfType<LevelManagerCs>();
+        //lv= Object.FindObjectOfType<LevelManagerCs>();
         NpcText.SetActive(false);
         NpcInterActionText.SetActive(false);
 
         thingToEnable.SetActive(false);
-        for (int i = 0; i < PickUps.Length; i++)
+        if (PickUps!=null)
         {
-            PickUps[i].SetActive(false);
+            for (int i = 0; i < PickUps.Length; i++)
+            {
+                PickUps[i].SetActive(false);
+            }
         }
+
     }
 	void OnTriggerEnter(Collider other)
     {
@@ -47,10 +51,7 @@ public class NpcUiCs : MonoBehaviour
         {
             GameObject.Find("PauseHandler").SetActive(false);
             Object.FindObjectOfType<PauseCs>().OnPause();
-            if (!thingToEnable)
-            {
-                thingToEnable.SetActive(true);
-            }
+            thingToEnable.SetActive(true);
 
            // NpcText.SetActive(true);
             // npc.SetInteractive();
