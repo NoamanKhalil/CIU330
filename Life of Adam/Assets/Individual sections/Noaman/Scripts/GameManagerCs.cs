@@ -30,7 +30,11 @@ public class GameManagerCs : MonoBehaviour
 	void Update ()
     {
        // Debug.Log("GM Update called");
-        mainTimer -= Time.deltaTime;
+        if (!SceneA&&!SceneB)
+        {
+            mainTimer -= Time.deltaTime;
+        }
+
         Debug.Log(mainTimer);
         //Debug.Log(timer);
         if (mainTimer <=0)

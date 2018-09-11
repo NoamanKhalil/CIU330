@@ -42,10 +42,14 @@ public class FpcontrollerCs : MonoBehaviour
     [Header("Players fall time before they die")]
 	[SerializeField]
     float tempTime = 5f;
-	[Header("refrence to the stamina image component")]
+    [Header("Refrences to Ui for in game Stuff")]
+    [Header("refrence to the stamina image component")]
 	public Image staminaUi;
 	private float staminaUifill;
-	Rigidbody rb;
+    public GameObject CrouchUi;
+    public GameObject StandingUi;
+    public GameObject IsPickingUi;
+    Rigidbody rb;
 	float forwardInput, straffeInput;
 	[Header("stamina regen speed & stamina value (Do not change)")]
     [SerializeField]
@@ -95,7 +99,22 @@ public class FpcontrollerCs : MonoBehaviour
         {
             staminaUi = GameObject.FindGameObjectWithTag("Stamina").GetComponent<Image>();
         }
-		startPos = transform.position;
+        if (!CrouchUi)
+        {
+            CrouchUi = GameObject.FindGameObjectWithTag("CrouchUi"); 
+        }
+        if (!StandingUi)
+        {
+            StandingUi = GameObject.FindGameObjectWithTag("StandingUi");
+        }
+        if (!IsPickingUi)
+        {
+            IsPickingUi = GameObject.FindGameObjectWithTag("HoldingUi");
+        }
+        IsPickingUi.SetActive(false);
+        CrouchUi.SetActive(false);
+
+        startPos = transform.position;
 		startRot = camera.transform.rotation;
 		rb = GetComponent<Rigidbody>();
 		forwardInput = straffeInput = 0;
@@ -115,7 +134,7 @@ public class FpcontrollerCs : MonoBehaviour
 	void Update()
 	{
         Vector3 currentPos = transform.position;
-        bool tempColliderCheck = myCollider.gameObject.active;
+       // bool tempColliderCheck = myCollider.gameObject.active;
         //AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
         // normal walk
         if (!isRunning&&!isHolding&& canCrouch && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
@@ -159,7 +178,7 @@ public class FpcontrollerCs : MonoBehaviour
             onAnim(8);
         }
 
-
+        
         if (Time.timeScale >= 1)
 		{
 			Run();
@@ -220,7 +239,14 @@ public class FpcontrollerCs : MonoBehaviour
             GroundCheck();
             lastPos = currentPos;
 
-
+            if (isHolding)
+            {
+                IsPickingUi.SetActive(true);
+            }
+            else 
+            {
+                IsPickingUi.SetActive(false);
+            }
             if (this.transform.position == startPos)
             {
                 //Debug.Log("capsule reset called");
@@ -276,6 +302,8 @@ public class FpcontrollerCs : MonoBehaviour
 		// on true
         if (canCrouch&& Input.GetKeyDown(KeyCode.LeftControl))
 		{
+            StandingUi.SetActive(false);
+            CrouchUi.SetActive(true);
             onAnim(3);
             canMove = false;
 			//Vector3 mypos = myCollider.bounds.center;
@@ -299,7 +327,9 @@ public class FpcontrollerCs : MonoBehaviour
 		//on false 
 		else if (!canCrouch && Input.GetKeyDown(KeyCode.LeftControl))
 		{
-			canMove = false;
+            StandingUi.SetActive(true);
+            CrouchUi.SetActive(false);
+            canMove = false;
 			myCollider.center = startCrouchSize;
             myCollider.height = startPosHeight;
 			canCrouch = true;

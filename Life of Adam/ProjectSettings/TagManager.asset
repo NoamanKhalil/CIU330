@@ -18,6 +18,9 @@ TagManager:
   - Stamina
   - Ability
   - PickIndicator
+  - CrouchUi
+  - StandingUi
+  - HoldingUi
   layers:
   - Default
   - TransparentFX

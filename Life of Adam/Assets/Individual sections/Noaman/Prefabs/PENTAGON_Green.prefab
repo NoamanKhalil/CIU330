@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 65330791837144008}
   - component: {fileID: 54079595230263954}
   - component: {fileID: 114847699120673680}
-  m_Layer: 0
+  - component: {fileID: 114535838737657604}
+  m_Layer: 12
   m_Name: PENTAGON_Green
   m_TagString: Green
   m_Icon: {fileID: 0}
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1761066207055676}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 12.83, y: 0, z: 5.111}
+  m_LocalPosition: {x: -10.188, y: 0.703, z: -14.79}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +60,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: b534d0e696157448f87654a14c06fc32, type: 2}
+  - {fileID: 2100000, guid: 20791110ba5a77349a67924279b7ff22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,6 +114,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3435295, y: 0.33253005, z: 0.17636545}
   m_Center: {x: -0.000005640091, y: -0.0000002905727, z: 0.0000003390015}
+--- !u!114 &114535838737657604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761066207055676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd8e0af3c67f48eea6aed28321d512f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0.15496778, g: 1, b: 0, a: 1}
+  endColor: {r: 1, g: 0.25595152, b: 0.13333333, a: 1}
 --- !u!114 &114847699120673680
 MonoBehaviour:
   m_ObjectHideFlags: 1

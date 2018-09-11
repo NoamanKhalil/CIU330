@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class LevelManagerCs : MonoBehaviour
 {
 	public int lives;
+    public int numOfHearts;
+
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHearts;
+
 	public float levelTimer;
 	public float timer;
 	public bool blue;
@@ -27,10 +33,40 @@ public class LevelManagerCs : MonoBehaviour
      void Start()
     {
         tempTmer = levelTimer;
+        if (isTutorial)
+        {
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
     void Update () 
 	{
-        Debug.Log("LevelManageroWorks");
+        if (lives>numOfHearts)
+        {
+            lives = numOfHearts;
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i<lives)
+            {
+                hearts[i].sprite = fullHeart;
+            }else
+            {
+                hearts[i].sprite = emptyHearts;
+            }
+            if (i<numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+
+        //Debug.Log("LevelManageroWorks");
 		if (lives <= 0)
 		{
 			//timer = 1.0f;
