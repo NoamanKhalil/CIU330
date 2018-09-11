@@ -137,26 +137,21 @@ public class LevelManagerCs : MonoBehaviour
         {
             loadMyScene();
         }
-
 		if (timerTxt != null && isHappy)
 		{
 			levelTimer -= Time.deltaTime;
-
 			int minutes = Mathf.FloorToInt(levelTimer / 60F);
 			int seconds = Mathf.FloorToInt(levelTimer - minutes * 60);
 			string timeString = string.Format("{0:0}:{1:00}", minutes, seconds);
 			timerTxt.text = timeString;
-           // Debug.Log("IsHappy timer");
         }
         if (isTutorialTimer)
         {
             levelTimer -= Time.deltaTime;
-
             int minutes = Mathf.FloorToInt(levelTimer / 60F);
             int seconds = Mathf.FloorToInt(levelTimer - minutes * 60);
             string timeString = string.Format("{0:0}:{1:00}", minutes, seconds);
             timerTxt.text = timeString;
-            //Debug.Log("IstutorialTimer");
         }
         //------------------------------------------//
         //Only happens when in tutorial
@@ -199,8 +194,6 @@ public class LevelManagerCs : MonoBehaviour
     {
         isTutorialTimer = false;
     }
-
-
     // to be called in day 1,2,3 happy 
 	public void setTimerTrue()
 	{
